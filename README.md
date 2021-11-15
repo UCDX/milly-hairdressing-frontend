@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
+## Dependencies
+
+For the first time you clone this repository, you need to install its dependencies to make it work. To do so, run the following command:
+
+```bash
+npm ci
+```
+
+Also, make sure you have installed the Angular CLI. If it's not installed in your system, [go to this page](https://angular.io/guide/setup-local)
+to see how to do it.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
