@@ -4,13 +4,14 @@ import { MaterialModule } from '../material/material.module';
 import { ComponentsModule } from '../components/components.module';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
-
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
   declarations: [
     LandingComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
   ],
   exports: [
     LandingComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class ViewsModule { }
