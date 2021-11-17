@@ -1,12 +1,15 @@
 <div class="addservice-area">
   <div>
     <h1 class="text-center">Crear servicio</h1>
-    <app-two-field-form-service
+    <app-fifth-field-form-service
       firstFieldLabel="Nombre Servicio"
       secondFieldLabel="Precio"
+      thirdFieldLabel= "Descripción Servicio"
+      fourthFieldLabel= "Descripción corta"
+      fifthFieldLabel= "Duración"
       leftBtnLabel="Volver"
       rightBtnLabel="Añadir"
       (press)="addserviceBoxHandler($event)">
-    </app-two-field-form-service>
+    </app-fifth-field-form-service>
   </div>
 </div>

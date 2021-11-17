@@ -24,6 +24,16 @@ export class AddserviceComponent implements OnInit {
       alert('El campo Precio es requerido')
       return;
     }
+    event.thirdField = event.thirdField.trim();
+    if(event.thirdField == '') {
+      alert('El campo Descripción Servicio es requerido')
+      return;
+    }
+    event.fifthField = event.fifthField.trim();
+    if(event.fifthField == '') {
+      alert('El campo Duración es requerido')
+      return;
+    }
   }
 
 }
