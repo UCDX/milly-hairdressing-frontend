@@ -5,13 +5,15 @@ import { ComponentsModule } from '../components/components.module';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterStylistComponent } from './register-stylist/register-stylist.component';
 
 
 @NgModule({
   declarations: [
     LandingComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterStylistComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { RegisterComponent } from './register/register.component';
   exports: [
     LandingComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterStylistComponent
   ]
 })
 export class ViewsModule { }
