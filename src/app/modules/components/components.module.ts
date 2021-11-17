@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { TwoFieldFormComponent } from './two-field-form/two-field-form.component';
 import { FifthFieldFormComponent } from './fifth-field-form/fifth-field-form.component';
+import { TwoFieldFormServiceComponent } from './two-field-form-service/two-field-form-service.component';
 
 
 @NgModule({
   declarations: [
     TwoFieldFormComponent,
-    FifthFieldFormComponent
+    FifthFieldFormComponent,
+    TwoFieldFormServiceComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { FifthFieldFormComponent } from './fifth-field-form/fifth-field-form.com
   ],
   exports: [
     TwoFieldFormComponent,
-    FifthFieldFormComponent
+    FifthFieldFormComponent,
+    TwoFieldFormServiceComponent
   ]
 })
 export class ComponentsModule { }
