@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from '../views/landing/landing.component';
 import { LoginComponent } from '../views/login/login.component';
 import { RegisterComponent } from '../views/register/register.component';
+import { RegisterStylistComponent } from '../views/register-stylist/register-stylist.component';
 import { AddserviceComponent } from '../views/addservice/addservice.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'register_stylist', component: RegisterStylistComponent },
   { path: 'addservice', component: AddserviceComponent }
 ];
 

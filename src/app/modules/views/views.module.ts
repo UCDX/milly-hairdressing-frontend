@@ -5,6 +5,7 @@ import { ComponentsModule } from '../components/components.module';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterStylistComponent } from './register-stylist/register-stylist.component';
 import { AddserviceComponent } from './addservice/addservice.component';
 
 
@@ -13,6 +14,7 @@ import { AddserviceComponent } from './addservice/addservice.component';
     LandingComponent,
     LoginComponent,
     RegisterComponent,
+    RegisterStylistComponent,
     AddserviceComponent
   ],
   imports: [
@@ -24,6 +26,7 @@ import { AddserviceComponent } from './addservice/addservice.component';
     LandingComponent,
     LoginComponent,
     RegisterComponent,
+    RegisterStylistComponent,
     AddserviceComponent
   ]
 })
