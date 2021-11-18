@@ -6,6 +6,7 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterStylistComponent } from './register-stylist/register-stylist.component';
+import { AddserviceComponent } from './addservice/addservice.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RegisterStylistComponent } from './register-stylist/register-stylist.co
     LandingComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterStylistComponent
+    RegisterStylistComponent,
+    AddserviceComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { RegisterStylistComponent } from './register-stylist/register-stylist.co
     LandingComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterStylistComponent
+    RegisterStylistComponent,
+    AddserviceComponent
   ]
 })
 export class ViewsModule { }
