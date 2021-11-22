@@ -6,7 +6,7 @@ import { FifthFieldFormComponent } from './fifth-field-form/fifth-field-form.com
 import { RegisterStylistFormComponent } from './register-stylist-form/register-stylist-form.component';
 import { ServiceCardComponent } from './service-card/service-card.component';
 import { ReservationCardComponent } from './reservation-card/reservation-card.component';
-
+import { DatePickerFormComponent } from './date-picker-form/date-picker-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,8 @@ import { ReservationCardComponent } from './reservation-card/reservation-card.co
     FifthFieldFormComponent,
     RegisterStylistFormComponent,
     ServiceCardComponent,
-    ReservationCardComponent
+    ReservationCardComponent,
+    DatePickerFormComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +26,8 @@ import { ReservationCardComponent } from './reservation-card/reservation-card.co
     FifthFieldFormComponent,
     RegisterStylistFormComponent,
     ServiceCardComponent,
-    ReservationCardComponent
+    ReservationCardComponent,
+    DatePickerFormComponent
   ]
 })
 export class ComponentsModule { }

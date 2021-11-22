@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Service } from 'src/app/lib/milly-data-clases';
 import { ActionButton } from 'src/app/lib/component-clases';
 import { ServiceCardActionEvent } from '../../components/service-card/service-card.component';
+import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-available-services',
@@ -10,50 +12,42 @@ import { ServiceCardActionEvent } from '../../components/service-card/service-ca
 })
 export class AvailableServicesComponent implements OnInit {
 
-  services: Service[] | null = null;
+  services: Service[] = [];
   actions: ActionButton[] = [
     {
-      displayName: 'Editar',
-      codeName: 'edit',
+      displayName: 'Ver',
+      codeName: 'see',
       color: ''
     },
     {
-      displayName: 'Cancelar',
-      codeName: 'cancel',
-      color: 'warn'
+      displayName: 'Hacer recervación',
+      codeName: 'appointment',
+      color: 'primary'
     }
   ]
 
-  constructor() { }
+  constructor(
+    private milly: MillyBackendService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    //Estos datos se traerán del backend.
-    //De momento es simulado.
-    this.services = [
-      {
-        service_name: 'Corte de cabello',
-        service_description: 'Corte de cabello.',
-        service_duration: 1,
-        short_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
-        id: 1,
-        is_active: 1,
-        cost: 100
-      },
-      {
-        service_name: 'Alaciado',
-        service_description: 'Alaciado.',
-        service_duration: 2,
-        short_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
-        id: 2,
-        is_active: 1,
-        cost: 150
-      }
-    ]
+    
+    this.milly.getServices().subscribe(res => {
+      console.log(res)
+      this.services = res.data.services
+    });
   }
 
   actionHandler(event: ServiceCardActionEvent) {
     //Aquí se maneja lo que ocurre cuando se presiona un botón de las tarjetas de los servicios.
     console.log(event);
+
+    if(event.actionCodeName == 'appointment') {
+      this.router.navigateByUrl('/bookappointment');
+      return;
+    }
+
     alert(`Se precionó la acción: "${event.actionCodeName}" para el servicio: "${event.service.service_name}".`);
   }
 

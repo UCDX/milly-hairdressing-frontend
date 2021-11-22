@@ -41,3 +41,8 @@ export class Reservation {
   service_duration: number = 0;
   is_service_active: number = 0;
 }
+
+export class ServiceList {
+  total_record: number = 0;
+  services: Service[] = [];
+}

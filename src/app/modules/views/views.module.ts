@@ -9,7 +9,7 @@ import { RegisterStylistComponent } from './register-stylist/register-stylist.co
 import { AddserviceComponent } from './addservice/addservice.component';
 import { AvailableServicesComponent } from './available-services/available-services.component';
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
-
+import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { ListAppointmentsComponent } from './list-appointments/list-appointments
     RegisterStylistComponent,
     AddserviceComponent,
     AvailableServicesComponent,
-    ListAppointmentsComponent
+    ListAppointmentsComponent,
+    BookAppointmentComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +33,8 @@ import { ListAppointmentsComponent } from './list-appointments/list-appointments
     RegisterComponent,
     RegisterStylistComponent,
     AddserviceComponent,
-    AvailableServicesComponent
+    AvailableServicesComponent,
+    BookAppointmentComponent
   ]
 })
 export class ViewsModule { }

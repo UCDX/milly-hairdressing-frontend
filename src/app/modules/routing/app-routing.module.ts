@@ -8,6 +8,7 @@ import { RegisterStylistComponent } from '../views/register-stylist/register-sty
 import { AddserviceComponent } from '../views/addservice/addservice.component';
 import { AvailableServicesComponent } from '../views/available-services/available-services.component';
 import { ListAppointmentsComponent } from '../views/list-appointments/list-appointments.component';
+import { BookAppointmentComponent } from '../views/bookappointment/bookappointment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'register_stylist', component: RegisterStylistComponent },
   { path: 'addservice', component: AddserviceComponent },
   { path: 'services', component: AvailableServicesComponent },
-  { path: 'list_appointments', component: ListAppointmentsComponent }
+  { path: 'list_appointments', component: ListAppointmentsComponent },
+  { path: 'bookappointment', component: BookAppointmentComponent }
 ];
 
 @NgModule({
