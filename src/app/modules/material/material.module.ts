@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 let modules = [
@@ -17,6 +18,7 @@ let modules = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
+  MatNativeDateModule,
   MatDatepickerModule
 ]
 

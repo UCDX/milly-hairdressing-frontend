@@ -10,12 +10,14 @@
         <input matInput [type]="secondType" #secondInput>
       </mat-form-field>
       <!-- Datepicker -->
-      <mat-form-field appearance="fill" class="datepicker">
+      
+      <mat-form-field appearance="fill" class="form-field">
         <mat-label>{{thirdFieldLabel}}</mat-label>
         <input matInput [matDatepicker]="picker" #thirdInput>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      
       <!--  -->
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>{{fourthFieldLabel}}</mat-label>
