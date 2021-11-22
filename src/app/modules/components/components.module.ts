@@ -5,6 +5,7 @@ import { TwoFieldFormComponent } from './two-field-form/two-field-form.component
 import { FifthFieldFormComponent } from './fifth-field-form/fifth-field-form.component';
 import { RegisterStylistFormComponent } from './register-stylist-form/register-stylist-form.component';
 import { ServiceCardComponent } from './service-card/service-card.component';
+import { ReservationCardComponent } from './reservation-card/reservation-card.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ServiceCardComponent } from './service-card/service-card.component';
     TwoFieldFormComponent,
     FifthFieldFormComponent,
     RegisterStylistFormComponent,
-    ServiceCardComponent
+    ServiceCardComponent,
+    ReservationCardComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { ServiceCardComponent } from './service-card/service-card.component';
     TwoFieldFormComponent,
     FifthFieldFormComponent,
     RegisterStylistFormComponent,
-    ServiceCardComponent
+    ServiceCardComponent,
+    ReservationCardComponent
   ]
 })
 export class ComponentsModule { }

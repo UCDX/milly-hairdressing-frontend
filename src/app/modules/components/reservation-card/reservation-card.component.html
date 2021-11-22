@@ -1,0 +1,35 @@
+<mat-card class="card" *ngIf="reservation">
+  <mat-card-title-group>
+    <mat-card-title>{{reservation.service_name}}</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p>
+      {{reservation.service_short_desc}}
+    </p>
+    <p>
+      <b>Fecha:</b> {{date}}
+    </p>
+    <p *ngIf="reservation.start_time > 9">
+      <b>Hora: </b> {{reservation.start_time}}:00 hrs.
+    </p>
+    <p *ngIf="reservation.start_time < 10">
+      <b>Hora: </b> 0{{reservation.start_time}}:00 hrs.
+    </p>
+    <p>
+      <b>Costo:</b> ${{reservation.cost}} pesos.
+    </p>
+    <p>
+      <b>Duración:</b> {{reservation.service_duration}} horas.
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="text-right">
+    <button *ngFor="let btn of actions"
+      mat-flat-button
+      [color]="btn.color"
+      (click)="optionHandler(btn.codeName)">{{btn.displayName}}</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="card" *ngIf="!reservation">
+  No se proporcionó un objeto válido para desplegar datos del servicio.
+</mat-card>

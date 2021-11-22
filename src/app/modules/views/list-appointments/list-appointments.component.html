@@ -1,0 +1,10 @@
+<h1 class="text-center aligned-item">Mis citas</h1>
+<div class="aligner-container">
+  <app-reservation-card
+    class="aligned-item"
+    *ngFor="let r of reservations"
+    [actions]=actions
+    [reservation] = r
+    (action)="actionHandler($event)">
+  </app-reservation-card>
+</div>
