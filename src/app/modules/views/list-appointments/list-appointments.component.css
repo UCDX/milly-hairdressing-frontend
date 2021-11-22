@@ -1,0 +1,10 @@
+.aligner-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligned-item {
+  margin: 20px;
+}

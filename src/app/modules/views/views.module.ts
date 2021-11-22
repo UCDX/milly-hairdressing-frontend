@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterStylistComponent } from './register-stylist/register-stylist.component';
 import { AddserviceComponent } from './addservice/addservice.component';
 import { AvailableServicesComponent } from './available-services/available-services.component';
+import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BookAppointmentComponent } from './bookappointment/bookappointment.comp
     RegisterStylistComponent,
     AddserviceComponent,
     AvailableServicesComponent,
+    ListAppointmentsComponent,
     BookAppointmentComponent
   ],
   imports: [

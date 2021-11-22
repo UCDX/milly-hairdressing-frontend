@@ -29,6 +29,19 @@ export class Service {
   is_active: number = 0;
 }
 
+export class Reservation {
+  id_reservation: number = 0;
+  reservation_date: Date | null = null;
+  start_time: number = 0;
+  end_time: number = 0;
+  service_id: number = 0;
+  service_name: string = '';
+  cost: number = 0;
+  service_short_desc: string = '';
+  service_duration: number = 0;
+  is_service_active: number = 0;
+}
+
 export class ServiceList {
   total_record: number = 0;
   services: Service[] = [];

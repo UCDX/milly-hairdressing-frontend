@@ -7,6 +7,7 @@ import { RegisterComponent } from '../views/register/register.component';
 import { RegisterStylistComponent } from '../views/register-stylist/register-stylist.component';
 import { AddserviceComponent } from '../views/addservice/addservice.component';
 import { AvailableServicesComponent } from '../views/available-services/available-services.component';
+import { ListAppointmentsComponent } from '../views/list-appointments/list-appointments.component';
 import { BookAppointmentComponent } from '../views/bookappointment/bookappointment.component';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'register_stylist', component: RegisterStylistComponent },
   { path: 'addservice', component: AddserviceComponent },
   { path: 'services', component: AvailableServicesComponent },
+  { path: 'list_appointments', component: ListAppointmentsComponent },
   { path: 'bookappointment', component: BookAppointmentComponent }
 ];
 
