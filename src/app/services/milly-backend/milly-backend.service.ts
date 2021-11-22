@@ -19,8 +19,18 @@ export class MillyBackendService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
-    }
-    let endpoint = `${this.host}/api/users/signup`
+    };
+    let endpoint = `${this.host}/api/users/signup`;
     return this.http.post<MDI.Response<MDI.SignUp>>(endpoint, userdata, httpOptions);
+  }
+
+  getServices(): Observable<MDI.Response<MDI.ServiceList>> {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    let endpoint = `${this.host}/api/services/get-all`;
+    return this.http.get<MDI.Response<MDI.ServiceList>>(endpoint, httpOptions);
   }
 }

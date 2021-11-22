@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Service } from 'src/app/lib/milly-data-clases';
 import { ActionButton } from 'src/app/lib/component-clases';
 import { ServiceCardActionEvent } from '../../components/service-card/service-card.component';
+import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 
 @Component({
   selector: 'app-available-services',
@@ -10,25 +11,29 @@ import { ServiceCardActionEvent } from '../../components/service-card/service-ca
 })
 export class AvailableServicesComponent implements OnInit {
 
-  services: Service[] | null = null;
+  services: Service[] = [];
   actions: ActionButton[] = [
     {
-      displayName: 'Editar',
-      codeName: 'edit',
-      color: ''
-    },
-    {
-      displayName: 'Cancelar',
-      codeName: 'cancel',
-      color: 'warn'
+      displayName: 'Ver',
+      codeName: 'see',
+      color: 'primary'
     }
   ]
 
-  constructor() { }
+  constructor(
+    private milly: MillyBackendService
+  ) { }
 
   ngOnInit(): void {
+    
+    this.milly.getServices().subscribe(res => {
+      console.log(res)
+      this.services = res.data.services
+    });
+    
     //Estos datos se traerán del backend.
     //De momento es simulado.
+    /*
     this.services = [
       {
         service_name: 'Corte de cabello',
@@ -49,6 +54,7 @@ export class AvailableServicesComponent implements OnInit {
         cost: 150
       }
     ]
+    */
   }
 
   actionHandler(event: ServiceCardActionEvent) {

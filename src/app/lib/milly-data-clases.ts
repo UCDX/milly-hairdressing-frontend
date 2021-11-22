@@ -28,3 +28,8 @@ export class Service {
   service_duration: number = 0;
   is_active: number = 0;
 }
+
+export class ServiceList {
+  total_record: number = 0;
+  services: Service[] = [];
+}
