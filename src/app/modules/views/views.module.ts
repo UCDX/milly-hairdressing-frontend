@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterStylistComponent } from './register-stylist/register-stylist.component';
 import { AddserviceComponent } from './addservice/addservice.component';
+import { AvailableServicesComponent } from './available-services/available-services.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AddserviceComponent } from './addservice/addservice.component';
     LoginComponent,
     RegisterComponent,
     RegisterStylistComponent,
-    AddserviceComponent
+    AddserviceComponent,
+    AvailableServicesComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { AddserviceComponent } from './addservice/addservice.component';
     LoginComponent,
     RegisterComponent,
     RegisterStylistComponent,
-    AddserviceComponent
+    AddserviceComponent,
+    AvailableServicesComponent
   ]
 })
 export class ViewsModule { }

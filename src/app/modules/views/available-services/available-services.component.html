@@ -1,0 +1,10 @@
+<h1 class="text-center aligned-item">Servicios disponibles</h1>
+<div class="aligner-container">
+  <app-service-card
+    class="aligned-item"
+    *ngFor="let s of services"
+    [actions]=actions
+    [service]=s
+    (action)="actionHandler($event)">
+  </app-service-card>
+</div>

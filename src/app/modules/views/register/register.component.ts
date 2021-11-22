@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicUserData } from 'src/app/lib/milly-data-interfaces';
+import { BasicUserData } from 'src/app/lib/milly-data-clases';
 import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 
 @Component({

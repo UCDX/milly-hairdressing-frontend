@@ -13,10 +13,10 @@
 
 <mat-drawer-container class="sidenav" id="sidenav" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="over">
-    <button mat-button class="btn-side-menu">
+    <button mat-button class="btn-side-menu" routerLink="/services" (click)="drawer.toggle()">
       Servicios
     </button>
-    <button mat-button class="btn-side-menu">
+    <button mat-button class="btn-side-menu" (click)="drawer.toggle()">
       Ver citas
     </button>
   </mat-drawer>

@@ -4,13 +4,15 @@ import { MaterialModule } from '../material/material.module';
 import { TwoFieldFormComponent } from './two-field-form/two-field-form.component';
 import { FifthFieldFormComponent } from './fifth-field-form/fifth-field-form.component';
 import { RegisterStylistFormComponent } from './register-stylist-form/register-stylist-form.component';
+import { ServiceCardComponent } from './service-card/service-card.component';
 
 
 @NgModule({
   declarations: [
     TwoFieldFormComponent,
     FifthFieldFormComponent,
-    RegisterStylistFormComponent
+    RegisterStylistFormComponent,
+    ServiceCardComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { RegisterStylistFormComponent } from './register-stylist-form/register-s
   exports: [
     TwoFieldFormComponent,
     FifthFieldFormComponent,
-    RegisterStylistFormComponent
+    RegisterStylistFormComponent,
+    ServiceCardComponent
   ]
 })
 export class ComponentsModule { }
