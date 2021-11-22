@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterStylistComponent } from './register-stylist/register-stylist.component';
 import { AddserviceComponent } from './addservice/addservice.component';
 import { AvailableServicesComponent } from './available-services/available-services.component';
-
+import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { AvailableServicesComponent } from './available-services/available-servi
     RegisterComponent,
     RegisterStylistComponent,
     AddserviceComponent,
-    AvailableServicesComponent
+    AvailableServicesComponent,
+    BookAppointmentComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +31,8 @@ import { AvailableServicesComponent } from './available-services/available-servi
     RegisterComponent,
     RegisterStylistComponent,
     AddserviceComponent,
-    AvailableServicesComponent
+    AvailableServicesComponent,
+    BookAppointmentComponent
   ]
 })
 export class ViewsModule { }
