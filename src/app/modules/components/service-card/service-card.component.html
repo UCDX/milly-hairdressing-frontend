@@ -1,0 +1,26 @@
+<mat-card class="card" *ngIf="service">
+  <mat-card-title-group>
+    <mat-card-title>{{service.service_name}}</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p>
+      {{service.short_description}}
+    </p>
+    <p>
+      <b>Costo:</b> ${{service.cost}} pesos.
+    </p>
+    <p>
+    <b>Duración:</b> {{service.service_duration}} horas.
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="text-right">
+    <button *ngFor="let btn of actions"
+      mat-flat-button
+      [color]="btn.color"
+      (click)="optionHandler(btn.codeName)">{{btn.displayName}}</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="card" *ngIf="!service">
+  No se proporcionó un objeto válido para desplegar datos del servicio.
+</mat-card>

@@ -6,6 +6,7 @@ import { LoginComponent } from '../views/login/login.component';
 import { RegisterComponent } from '../views/register/register.component';
 import { RegisterStylistComponent } from '../views/register-stylist/register-stylist.component';
 import { AddserviceComponent } from '../views/addservice/addservice.component';
+import { AvailableServicesComponent } from '../views/available-services/available-services.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'register_stylist', component: RegisterStylistComponent },
-  { path: 'addservice', component: AddserviceComponent }
+  { path: 'addservice', component: AddserviceComponent },
+  { path: 'services', component: AvailableServicesComponent }
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as MDI from '../../lib/milly-data-interfaces';
+import * as MDI from '../../lib/milly-data-clases';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
