@@ -1,0 +1,28 @@
+.aligner-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-text {
+  /*margin-left: 30px;*/
+  margin-right: 370px;
+  text-align: center;
+}
+
+.aligned-item {
+  margin: 20px;
+}
+
+.card {
+  width: 500px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.button-section {
+  text-align: right;
+}

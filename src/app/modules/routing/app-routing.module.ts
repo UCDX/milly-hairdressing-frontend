@@ -8,6 +8,7 @@ import { RegisterStylistComponent } from '../views/register-stylist/register-sty
 import { AddserviceComponent } from '../views/addservice/addservice.component';
 import { AvailableServicesComponent } from '../views/available-services/available-services.component';
 import { ListAppointmentsComponent } from '../views/list-appointments/list-appointments.component';
+import { ListAppointmentsByDayComponent } from '../views/list-appointments-by-day/list-appointments-by-day.component';
 import { BookAppointmentComponent } from '../views/bookappointment/bookappointment.component';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'addservice', component: AddserviceComponent },
   { path: 'services', component: AvailableServicesComponent },
   { path: 'list_appointments', component: ListAppointmentsComponent },
+  { path: 'list_appointments_by_day', component: ListAppointmentsByDayComponent },
   { path: 'bookappointment', component: BookAppointmentComponent }
 ];
 
