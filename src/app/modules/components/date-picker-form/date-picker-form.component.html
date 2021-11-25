@@ -1,14 +1,11 @@
 <mat-card class="card">
   <mat-card-content>
-    <form (submit)="submitHandler($event, 'right', firstInput.value, secondInput.value, thirdInput.value, fourthInput.value)">
-      <mat-form-field appearance="fill" class="form-field">
-        <mat-label>{{firstFieldLabel}}</mat-label>
-        <input matInput [type]="firstType" #firstInput>
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="form-field">
-        <mat-label>{{secondFieldLabel}}</mat-label>
-        <input matInput [type]="secondType" #secondInput>
-      </mat-form-field>
+    <form (submit)="submitHandler($event, 'right', thirdInput.value)">
+      <mat-list role="list" class="form-field">
+        <mat-list-item role="listitem">ID: {{firstFieldValue}}</mat-list-item>
+        <mat-list-item role="listitem">Servicio: {{secondFieldValue}}</mat-list-item>
+      </mat-list>
+      
       <!-- Datepicker -->
       
       <mat-form-field appearance="fill" class="form-field">
@@ -19,9 +16,14 @@
       </mat-form-field>
       
       <!--  -->
+      
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>{{fourthFieldLabel}}</mat-label>
-        <input matInput [type]="fourthType" #fourthInput>
+        <mat-select>
+          <mat-option *ngFor="let hour of hours" [value]="hours.values">
+            {{hour.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <button type="submit" style="display: none;"></button>
     </form>
@@ -29,13 +31,13 @@
   <mat-card-actions class="button-section">
     <button
       mat-button
-      (click)="pressHandler('left', firstInput.value, secondInput.value, thirdInput.value, fourthInput.value)">
+      (click)="pressHandler('left', thirdInput.value)">
         {{leftBtnLabel}}
     </button>
     <button
       mat-raised-button
       color="primary"
-      (click)="pressHandler('right', firstInput.value, secondInput.value, thirdInput.value, fourthInput.value)">
+      (click)="pressHandler('right', thirdInput.value)">
         {{rightBtnLabel}}
     </button>
   </mat-card-actions>
