@@ -13,11 +13,28 @@
 
 <mat-drawer-container class="sidenav" id="sidenav" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="over">
+    <!-- User acctions -->
     <button mat-button class="btn-side-menu" routerLink="/services" (click)="drawer.toggle()">
       Servicios
     </button>
     <button mat-button class="btn-side-menu" routerLink="/list_appointments" (click)="drawer.toggle()">
       Ver citas
+    </button>
+    <button mat-button class="btn-side-menu" routerLink="/bookappointment" (click)="drawer.toggle()">
+      Recervar cita
+    </button>
+    <button mat-button class="btn-side-menu" routerLink="/list_appointments" (click)="drawer.toggle()">
+      Mis citas
+    </button>
+    <!-- Admin accitions -->
+    <button mat-button class="btn-side-menu" routerLink="/register_stylist" (click)="drawer.toggle()">
+      Registrar estilista
+    </button>
+    <button mat-button class="btn-side-menu" routerLink="/addservice" (click)="drawer.toggle()">
+      Añadir servicio
+    </button>
+    <button mat-button class="btn-side-menu" routerLink="/list_appointments_by_day" (click)="drawer.toggle()">
+      Lista de citas
     </button>
   </mat-drawer>
 
