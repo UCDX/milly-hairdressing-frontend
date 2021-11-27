@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 
 @Component({
   selector: 'app-bookappointment',
@@ -8,9 +7,7 @@ import { MillyBackendService } from 'src/app/services/milly-backend/milly-backen
 })
 export class BookAppointmentComponent implements OnInit {
 
-  constructor(
-    private milly: MillyBackendService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

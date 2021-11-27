@@ -17,6 +17,8 @@ export class SignUp extends BasicUserData {
   id: number = 0;
   is_active: number = 0;
   session_token: string = '';
+  type_name: string = '';
+  type_code: string = '';
 };
 
 export class Service {

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  hostBackend: 'http://localhost:3000'
+  hostBackend: 'https://milly-hairdressing-backend.herokuapp.com'
 };
 
 /*
