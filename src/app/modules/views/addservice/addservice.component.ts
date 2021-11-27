@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 
 @Component({
   selector: 'app-addservice',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddserviceComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private milly: MillyBackendService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +37,12 @@ export class AddserviceComponent implements OnInit {
       alert('El campo Duración es requerido')
       return;
     }
+
+    this.milly.addService(event.firstField, event.secondField, event.thirdField, event.fourthField, event.fifthField)
+      .subscribe(res => {
+        console.log(res);
+        alert(res.messages.join(' | '));
+      });
   }
 
 }
