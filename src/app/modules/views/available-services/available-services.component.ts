@@ -44,7 +44,7 @@ export class AvailableServicesComponent implements OnInit {
     console.log(event);
 
     if(event.actionCodeName == 'appointment') {
-      this.router.navigateByUrl('/bookappointment');
+      this.router.navigateByUrl('/bookappointment/'+ event.service.id);
       return;
     }
 
