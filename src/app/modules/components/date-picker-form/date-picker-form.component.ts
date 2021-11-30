@@ -13,18 +13,18 @@ interface Hour {
 export class DatePickerFormComponent implements OnInit {
 
   hours: Hour[] = [
-    {value: '0', viewValue: '9:00 a.m - 11:00 a.m'},
-    {value: '1', viewValue: '11:00 a.m - 12:00 p.m'},
-    {value: '2', viewValue: '12:00 p.m - 2:00 p.m'},
-    {value: '3', viewValue: '2:00 p.m - 3:00 p.m'},
-    {value: '4', viewValue: '3:00 p.m - 5:00 p.m'},
-    {value: '5', viewValue: '5:00 p.m - 6:00 p.m'},
-    {value: '6', viewValue: '6:00 p.m - 8:00 p.m'},
-    {value: '7', viewValue: '8:00 p.m - 9:00 p.m'},
+    {value: '09:00:00', viewValue: '09:00 - 11:00'},
+    {value: '11:00:00', viewValue: '11:00 - 12:00'},
+    {value: '12:00:00', viewValue: '12:00 - 14:00'},
+    {value: '14:00:00', viewValue: '14:00 - 15:00'},
+    {value: '15:00:00', viewValue: '15:00 - 17:00'},
+    {value: '17:00:00', viewValue: '17:00 - 18:00'},
+    {value: '18:00:00', viewValue: '18:00 - 20:00'},
+    {value: '20:00:00', viewValue: '20:00 - 21:00'},
   ];
 
-  @Input() firstFieldValue: string = 'D5424';
-  @Input() secondFieldValue: string = 'Corte de pelo';
+  @Input() firstFieldValue: string = '';
+  @Input() secondFieldValue: string = '';
   @Input() thirdFieldLabel: string = '';
   @Input() fourthFieldLabel: string = '';
   @Input() thirdType: string = 'date';
