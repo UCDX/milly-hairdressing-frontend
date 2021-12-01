@@ -12,6 +12,7 @@ import { ListAppointmentsComponent } from './list-appointments/list-appointments
 import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-appointments-by-day.component';
 import { ModifyAppointmentComponent } from './modifyappointment/modifyappointment.component';
+import { ModifyserviceComponent } from './modifyservice/modifyservice.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListAppointmentsComponent,
     BookAppointmentComponent,
     ListAppointmentsByDayComponent,
-    ModifyAppointmentComponent
+    ModifyAppointmentComponent,
+    ModifyserviceComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AvailableServicesComponent,
     BookAppointmentComponent,
     ListAppointmentsByDayComponent,
-    ModifyAppointmentComponent
+    ModifyAppointmentComponent,
+    ModifyserviceComponent
   ]
 })
 export class ViewsModule { }

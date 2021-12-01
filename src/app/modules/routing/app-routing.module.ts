@@ -11,6 +11,7 @@ import { ListAppointmentsComponent } from '../views/list-appointments/list-appoi
 import { ListAppointmentsByDayComponent } from '../views/list-appointments-by-day/list-appointments-by-day.component';
 import { BookAppointmentComponent } from '../views/bookappointment/bookappointment.component';
 import { ModifyAppointmentComponent } from '../views/modifyappointment/modifyappointment.component';
+import { ModifyserviceComponent } from '../views/modifyservice/modifyservice.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'list_appointments', component: ListAppointmentsComponent },
   { path: 'list_appointments_by_day', component: ListAppointmentsByDayComponent },
   { path: 'bookappointment/:service_id', component: BookAppointmentComponent },
-  { path: 'modifyappointment/:service_id', component: ModifyAppointmentComponent}
+  { path: 'modifyappointment/:service_id', component: ModifyAppointmentComponent},
+  { path: 'modifyservice', component: ModifyserviceComponent}
 ];
 
 @NgModule({
