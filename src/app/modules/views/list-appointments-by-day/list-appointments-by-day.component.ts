@@ -2,6 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AdminReservation } from 'src/app/lib/milly-data-clases';
 import { ActionButton } from 'src/app/lib/component-clases';
 import { AdminReservationCardActionEvent } from '../../components/admin-reservation-card/admin-reservation-card.component';
+import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
+import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
+import { Service } from 'src/app/lib/milly-data-clases';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-list-appointments-by-day',
@@ -23,23 +28,40 @@ export class ListAppointmentsByDayComponent implements OnInit {
       color: 'warn'
     }
   ]
+  day: string = '';
 
-  constructor() { }
+  constructor(
+    private milly: MillyBackendService,
+    private router: Router,
+    private session: SessionService
+  ) { }
 
   ngOnInit(): void {
-    //Estos datos se traerán del backend.
-    //De momento es simulado.
   }
 
   actionHandler(event: AdminReservationCardActionEvent) {
+    console.log(event);
+
+    if(event.actionCodeName == 'modify') {
+      let service = new Service
+      service.service_name = event.reservation.service_name;
+      this.session.setService(service)
+      this.router.navigateByUrl('/modifyappointment/'+event.reservation.id_reservation);
+      return;
+    }
+
+    if(event.actionCodeName == 'cancel') {
+      this.router.navigateByUrl('/cancel-appointment');
+      return;
+    }
+
     //Aquí se maneja lo que ocurre cuando se presiona un botón de las tarjetas de los servicios.
     console.log(event);
-    alert(`Se precionó la acción: "${event.actionCodeName}" para la reservación con id: "${event.reservation.id_reservation}".`);
+    alert(`Se presionó la acción: "${event.actionCodeName}" para la reservación con id: "${event.reservation.id_reservation}".`);
   }
 
   selectDayBoxHandler(event: any) {
     console.log(event)
-
     if(event.button == 'right') {
       if( event.dayField.trim() == "")
       {
@@ -47,39 +69,14 @@ export class ListAppointmentsByDayComponent implements OnInit {
       }
       else if(this.checkDayFormat(event.dayField.trim()))
       {
+        this.day = moment(event.dayField.trim()).format('YYYY/MM/DD');
+        //alert(this.day);
+        this.milly.getReservationsByDay(this.day).subscribe(res => {
+          console.log(res)
+          this.reservations = res.data.reservations
+        });
+        /*
         this.reservations = [
-          {
-            id_reservation: 1,
-            user_id: 1,
-            firstname: 'Pedra',
-            lastname: 'Nieto',
-            reservation_date: new Date(),
-            start_time: 8,
-            end_time: 9,
-            service_id: 1,
-            service_name: 'Corte de cabello',
-            cost: 100,
-            service_description: 'Corte de cabello',
-            service_short_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
-            service_duration: 1,
-            is_service_active: 1
-          },
-          {
-            id_reservation: 2,
-            user_id: 2,
-            firstname: 'Carlota',
-            lastname: 'De Gortari',
-            reservation_date: new Date(),
-            start_time: 14,
-            end_time: 15,
-            service_id: 2,
-            service_name: 'Alaciado',
-            cost: 150,
-            service_description: 'Alaciado',
-            service_short_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
-            service_duration: 1,
-            is_service_active: 1
-          },
           {
             id_reservation: 3,
             user_id: 3,
@@ -95,24 +92,9 @@ export class ListAppointmentsByDayComponent implements OnInit {
             service_short_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
             service_duration: 1,
             is_service_active: 1
-          },
-          {
-            id_reservation: 4,
-            user_id: 4,
-            firstname: 'Jimena',
-            lastname: 'Quezada',
-            reservation_date: new Date(),
-            start_time: 11,
-            end_time: 13,
-            service_id: 4,
-            service_name: 'Mascarilla',
-            cost: 250,
-            service_description: 'Mascarilla',
-            service_short_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
-            service_duration: 2,
-            is_service_active: 0
           }
         ]
+        */
       }
       else
       {

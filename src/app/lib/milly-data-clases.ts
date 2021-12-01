@@ -66,6 +66,11 @@ export class AdminReservation {
   is_service_active: number = 0;
 }
 
+export class AdminReservationList {
+  total_record: number = 0;
+  reservations: AdminReservation[] = [];
+}
+
 export class ServiceList {
   total_record: number = 0;
   services: Service[] = [];

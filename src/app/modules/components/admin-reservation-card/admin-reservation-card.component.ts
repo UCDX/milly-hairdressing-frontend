@@ -14,12 +14,10 @@ export class AdminReservationCardComponent implements OnInit {
   @Input() actions: ActionButton[] = [];
   @Output() action: EventEmitter<any> = new EventEmitter;
   date: string = '';
-  name: string = '';
   constructor() { }
 
   ngOnInit(): void {
-    this.date = moment(this.reservation.reservation_date).format('LL');
-    this.name = this.reservation.firstname + ' ' + this.reservation.lastname;
+    this.date = moment(this.reservation.reservation_date).format('L');
   }
 
   optionHandler(codeName: string) {

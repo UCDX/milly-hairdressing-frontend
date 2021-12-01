@@ -35,24 +35,6 @@ export class ListAppointmentsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //Estos datos se traerán del backend.
-    //De momento es simulado.
-    /*
-    this.reservations = [
-      {
-        id_reservation: 1,
-        reservation_date: new Date(),
-        start_time: 8,
-        end_time: 9,
-        service_id: 1,
-        service_name: 'Corte de cabello',
-        cost: 100,
-        service_short_desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices est nec arcu rutrum volutpat. Curabitur lobortis lacus ligula, sit amet commodo ipsum blandit at. Proin ut bibendum nisl. Mauris ac tincidunt purus, at placerat ligula.',
-        service_duration: 1,
-        is_service_active: 1
-      }
-    ]
-    */
     this.milly.getReservations().subscribe(res => {
       console.log(res)
       this.reservations = res.data.reservations
