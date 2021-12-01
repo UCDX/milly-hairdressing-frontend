@@ -96,15 +96,15 @@ export class MillyBackendService {
   }
 
   getReservationsByDay(date: string): Observable<MDI.Response<MDI.AdminReservationList>> {
+    date = date.split('/').join('-')
     let token = this.session.getUserData()?.session_token || ''
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': token
-      }),
-      params: new HttpParams().set('date', date)
+      })
     };
-    let endpoint = `${this.host}/api/reservations/by-day`;
+    let endpoint = `${this.host}/api/reservations/by-day/${date}`;
     return this.http.get<MDI.Response<MDI.AdminReservationList>>(endpoint, httpOptions)
       .pipe(catchError(this.handleError<MDI.Response<MDI.AdminReservationList>>('get reservation-by-day list')));
   }
@@ -176,7 +176,7 @@ export class MillyBackendService {
     /*let body = {
       reservation_id: id,
     };*/
-    let endpoint = `${this.host}/api/reservations/cancel-reservation?reservation_id=${id}`;
+    let endpoint = `${this.host}/api/reservations/cancel-reservation/${id}`;
     return this.http.delete<MDI.Response<MDI.DeleteAppointment>>(endpoint,httpOptions)
       .pipe(catchError(this.handleError<MDI.Response<MDI.DeleteAppointment>>('delete reservation')));
   }

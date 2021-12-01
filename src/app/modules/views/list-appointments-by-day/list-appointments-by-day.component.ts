@@ -51,7 +51,9 @@ export class ListAppointmentsByDayComponent implements OnInit {
     }
 
     if(event.actionCodeName == 'cancel') {
-      this.router.navigateByUrl('/cancel-appointment');
+      let service = new Service
+      service.service_name = event.reservation.service_name;
+      this.router.navigateByUrl('/cancel-appointment/'+event.reservation.id_reservation);
       return;
     }
 
@@ -74,6 +76,7 @@ export class ListAppointmentsByDayComponent implements OnInit {
         this.milly.getReservationsByDay(this.day).subscribe(res => {
           console.log(res)
           this.reservations = res.data.reservations
+          alert(res.messages.join(' | '))
         });
         /*
         this.reservations = [

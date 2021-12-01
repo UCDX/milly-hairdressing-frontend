@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicUserData } from 'src/app/lib/milly-data-clases';
 import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
+import { SessionService } from 'src/app/services/session/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,9 @@ import { MillyBackendService } from 'src/app/services/milly-backend/milly-backen
 export class RegisterComponent implements OnInit {
 
   constructor(
-    private milly: MillyBackendService
+    private milly: MillyBackendService,
+    private session: SessionService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +62,11 @@ export class RegisterComponent implements OnInit {
   
       this.milly.signup(userdata).subscribe(res => {
         console.log(res);
-        sessionStorage.setItem('7wja92klaspk238sand32f', res.data.session_token)
+        alert(res.messages.join(' | '))
+        this.session.setUserData(res.data);
+        if(res.code == 0) {
+          this.router.navigateByUrl('/')
+        }
       })
     }
   }

@@ -18,22 +18,16 @@
       Servicios
     </button>
     <button mat-button class="btn-side-menu" routerLink="/list_appointments" (click)="drawer.toggle()">
-      Ver citas
-    </button>
-    <button mat-button class="btn-side-menu" routerLink="/bookappointment" (click)="drawer.toggle()">
-      Reservar cita
-    </button>
-    <button mat-button class="btn-side-menu" routerLink="/list_appointments" (click)="drawer.toggle()">
       Mis citas
     </button>
     <!-- Admin accitions -->
-    <button mat-button class="btn-side-menu" routerLink="/register_stylist" (click)="drawer.toggle()">
+    <button mat-button class="btn-side-menu" routerLink="/register_stylist" (click)="drawer.toggle()" *ngIf="!isNormalUser()">
       Registrar estilista
     </button>
-    <button mat-button class="btn-side-menu" routerLink="/addservice" (click)="drawer.toggle()">
+    <button mat-button class="btn-side-menu" routerLink="/addservice" (click)="drawer.toggle()" *ngIf="!isNormalUser()">
       Añadir servicio
     </button>
-    <button mat-button class="btn-side-menu" routerLink="/list_appointments_by_day" (click)="drawer.toggle()">
+    <button mat-button class="btn-side-menu" routerLink="/list_appointments_by_day" (click)="drawer.toggle()" *ngIf="!isNormalUser()">
       Lista de citas
     </button>
   </mat-drawer>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from './services/session/session.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Milly Hairdressing';
+
+  constructor(
+    private session: SessionService
+  ){}
 
   ngOnInit() {
     document.addEventListener('readystatechange', this.setSidenav);
@@ -19,5 +24,14 @@ export class AppComponent implements OnInit {
     let toolbar:any = document.getElementById('toolbar');
     let sidenav:any = document.getElementById('sidenav');
     sidenav.style.top = `${toolbar.offsetHeight}px`;
+  }
+
+  isNormalUser() {
+    let user = this.session.getUserData()
+    if(!user)
+      return true
+    if(user?.type_code == 'admin' || user?.type_code == 'hairdresser')
+      return false;
+    return true
   }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BasicUserData } from 'src/app/lib/milly-data-clases';
+import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
+import { SessionService } from 'src/app/services/session/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-stylist',
@@ -7,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterStylistComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private milly: MillyBackendService,
+    private session: SessionService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -38,5 +46,23 @@ export class RegisterStylistComponent implements OnInit {
       alert('La contraseña debe tener al menos seis caracteres')
       return;
     }
+
+    let userdata: BasicUserData = {
+      user_type_id: 2,
+      firstname: event.firstField,
+      lastname: event.secondField,
+      email: event.thirdField,
+      phone_number: event.fourthFieldLabel,
+      passwd: event.fifthField
+    };
+
+    this.milly.signup(userdata).subscribe(res => {
+      console.log(res);
+      alert(res.messages.join(' | '))
+      this.session.setUserData(res.data);
+      if(res.code == 0) {
+        this.router.navigateByUrl('/')
+      }
+    })
   }
 }

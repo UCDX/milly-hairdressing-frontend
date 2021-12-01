@@ -3,6 +3,7 @@ import { MillyBackendService } from 'src/app/services/milly-backend/milly-backen
 import { ActivatedRoute } from '@angular/router';
 import { SessionService } from 'src/app/services/session/session.service';
 import { Service } from 'src/app/lib/milly-data-clases';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-bookappointment',
@@ -41,7 +42,9 @@ export class BookAppointmentComponent implements OnInit {
       alert('El campo Duración Servicio es requerido')
       return;
     }
-    event.thirdField = event.thirdField.split('/').reverse().join('-')
+    //event.thirdField = event.thirdField.split('/').reverse().join('-')
+    event.thirdField = moment(event.thirdField).format('YYYY-MM-DD')
+    console.log(event.thirdField)
     this.milly.createReservation( this.service_id, event.thirdField, event.fourthField)
       .subscribe(res => {
         console.log(res);

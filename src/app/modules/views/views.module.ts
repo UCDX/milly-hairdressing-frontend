@@ -29,11 +29,8 @@ import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointm
     BookAppointmentComponent,
     ListAppointmentsByDayComponent,
     ModifyAppointmentComponent,
-<<<<<<< HEAD
-    ModifyserviceComponent
-=======
+    ModifyserviceComponent,
     CancelAppointmentComponent
->>>>>>> 6f6764b0e9d5c2f454d9b3d87bb55c3660d7b267
   ],
   imports: [
     CommonModule,
