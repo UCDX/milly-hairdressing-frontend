@@ -44,6 +44,11 @@ export class Reservation {
   is_service_active: number = 0;
 }
 
+export class ReservationList {
+  total_record: number = 0;
+  reservations: Reservation[] = [];
+}
+
 export class AdminReservation {
   id_reservation: number = 0;
   user_id: number = 0;
@@ -60,7 +65,6 @@ export class AdminReservation {
   service_duration: number = 0;
   is_service_active: number = 0;
 }
-
 
 export class ServiceList {
   total_record: number = 0;
