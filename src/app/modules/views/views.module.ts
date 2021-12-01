@@ -15,6 +15,7 @@ import { ModifyAppointmentComponent } from './modifyappointment/modifyappointmen
 import { ModifyserviceComponent } from './modifyservice/modifyservice.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CancelAppointmentComponent } from './cancel-appointment/cancel-appointment.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BookAppointmentComponent,
     ListAppointmentsByDayComponent,
     ModifyAppointmentComponent,
+<<<<<<< HEAD
     ModifyserviceComponent
+=======
+    CancelAppointmentComponent
+>>>>>>> 6f6764b0e9d5c2f454d9b3d87bb55c3660d7b267
   ],
   imports: [
     CommonModule,

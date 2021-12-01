@@ -72,7 +72,9 @@ export class ListAppointmentsComponent implements OnInit {
     }
 
     if(event.actionCodeName == 'cancel') {
-      this.router.navigateByUrl('/cancel-appointment');
+      let service = new Service
+      service.service_name = event.reservation.service_name;
+      this.router.navigateByUrl('/cancel-appointment/'+event.reservation.id_reservation);
       return;
     }
 

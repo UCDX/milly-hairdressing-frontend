@@ -75,3 +75,7 @@ export class BlockedTime {
   star_time: number = 0;
   end_time: number = 0;
 }
+
+export class DeleteAppointment {
+  reservation_id: number = 0;
+}
