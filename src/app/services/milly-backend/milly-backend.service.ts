@@ -149,4 +149,21 @@ export class MillyBackendService {
     return this.http.post<MDI.Response<MDI.BlockedTime>>(endpoint, body, httpOptions)
       .pipe(catchError(this.handleError<MDI.Response<MDI.BlockedTime>>('blocked time')));
   }
+
+  deleteReservation(id: number): Observable<MDI.Response<MDI.DeleteAppointment>> {
+    console.log(id)
+    let token = this.session.getUserData()?.session_token || ''
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      })
+    };
+    /*let body = {
+      reservation_id: id,
+    };*/
+    let endpoint = `${this.host}/api/reservations/cancel-reservation?reservation_id=${id}`;
+    return this.http.delete<MDI.Response<MDI.DeleteAppointment>>(endpoint,httpOptions)
+      .pipe(catchError(this.handleError<MDI.Response<MDI.DeleteAppointment>>('delete reservation')));
+  }
 }
