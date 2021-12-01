@@ -103,6 +103,7 @@ export class MillyBackendService {
   }
   
   createReservation(serv_id: number, reserv_date: string, s_time: string): Observable<MDI.Response<MDI.Reservation>> {
+    console.log(serv_id,reserv_date, s_time)
     let token = this.session.getUserData()?.session_token || ''
     let httpOptions = {
       headers: new HttpHeaders({

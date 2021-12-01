@@ -11,6 +11,7 @@ import { AvailableServicesComponent } from './available-services/available-servi
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-appointments-by-day.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-
   imports: [
     CommonModule,
     MaterialModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [
     LandingComponent,

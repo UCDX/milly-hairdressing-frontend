@@ -9,6 +9,7 @@ import { ReservationCardComponent } from './reservation-card/reservation-card.co
 import { DatePickerFormComponent } from './date-picker-form/date-picker-form.component';
 import { SelectDayFormComponent } from './select-day-form/select-day-form.component';
 import { AdminReservationCardComponent } from './admin-reservation-card/admin-reservation-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminReservationCardComponent } from './admin-reservation-card/admin-re
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [
     TwoFieldFormComponent,

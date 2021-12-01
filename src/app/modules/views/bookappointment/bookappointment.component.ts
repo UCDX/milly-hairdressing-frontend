@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 import { ActivatedRoute } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
+import { Service } from 'src/app/lib/milly-data-clases';
 
 @Component({
   selector: 'app-bookappointment',
@@ -11,15 +13,18 @@ export class BookAppointmentComponent implements OnInit {
 
   constructor(
       private milly: MillyBackendService,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private session: SessionService
     ) { }
   
   public service_id:any = '';
+  public service: any;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(dat => {
       console.log(dat.get('service_id'));
       this.service_id = dat.get('service_id');
+      this.service = this.session.getService();
     });
   }
 
@@ -36,7 +41,8 @@ export class BookAppointmentComponent implements OnInit {
       alert('El campo Duración Servicio es requerido')
       return;
     }
-    this.milly.createReservation( event.firstField, event.fourthField, event.thirdField)
+    event.thirdField = event.thirdField.split('/').reverse().join('-')
+    this.milly.createReservation( this.service_id, event.thirdField, event.fourthField)
       .subscribe(res => {
         console.log(res);
         alert(res.messages.join(' | '));
