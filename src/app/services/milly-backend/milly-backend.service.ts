@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import * as MDI from '../../lib/milly-data-clases';
 import { Observable, of, catchError } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -93,6 +93,20 @@ export class MillyBackendService {
     let endpoint = `${this.host}/api/users/get-user-appointments`;
     return this.http.get<MDI.Response<MDI.ReservationList>>(endpoint, httpOptions)
       .pipe(catchError(this.handleError<MDI.Response<MDI.ReservationList>>('get user-reservation list')));
+  }
+
+  getReservationsByDay(date: string): Observable<MDI.Response<MDI.AdminReservationList>> {
+    let token = this.session.getUserData()?.session_token || ''
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      }),
+      params: new HttpParams().set('date', date)
+    };
+    let endpoint = `${this.host}/api/reservations/by-day`;
+    return this.http.get<MDI.Response<MDI.AdminReservationList>>(endpoint, httpOptions)
+      .pipe(catchError(this.handleError<MDI.Response<MDI.AdminReservationList>>('get reservation-by-day list')));
   }
 
   addService(name: string, cost: number, desc: string, short_desc: string, duration: number): Observable<MDI.Response<MDI.Service>> {
