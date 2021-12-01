@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'list_appointments', component: ListAppointmentsComponent },
   { path: 'list_appointments_by_day', component: ListAppointmentsByDayComponent },
   { path: 'bookappointment/:service_id', component: BookAppointmentComponent },
-  { path: 'modifyappointment', component: ModifyAppointmentComponent}
+  { path: 'modifyappointment/:service_id', component: ModifyAppointmentComponent}
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 import { ActivatedRoute } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
 
 @Component({
   selector: 'app-modifyappointment',
@@ -11,10 +12,12 @@ export class ModifyAppointmentComponent implements OnInit {
 
   constructor(
       private milly: MillyBackendService,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private session: SessionService
     ) { }
   
   public service_id:any = '';
+  public service: any = this.session.getService();
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(dat => {
