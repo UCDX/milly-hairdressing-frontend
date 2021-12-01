@@ -10,6 +10,8 @@ import { AvailableServicesComponent } from '../views/available-services/availabl
 import { ListAppointmentsComponent } from '../views/list-appointments/list-appointments.component';
 import { ListAppointmentsByDayComponent } from '../views/list-appointments-by-day/list-appointments-by-day.component';
 import { BookAppointmentComponent } from '../views/bookappointment/bookappointment.component';
+import { ModifyAppointmentComponent } from '../views/modifyappointment/modifyappointment.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -21,7 +23,8 @@ const routes: Routes = [
   { path: 'services', component: AvailableServicesComponent },
   { path: 'list_appointments', component: ListAppointmentsComponent },
   { path: 'list_appointments_by_day', component: ListAppointmentsByDayComponent },
-  { path: 'bookappointment/:service_id', component: BookAppointmentComponent }
+  { path: 'bookappointment/:service_id', component: BookAppointmentComponent },
+  { path: 'modifyappointment/:service_id', component: ModifyAppointmentComponent}
 ];
 
 @NgModule({

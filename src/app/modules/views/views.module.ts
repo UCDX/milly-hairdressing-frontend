@@ -11,6 +11,8 @@ import { AvailableServicesComponent } from './available-services/available-servi
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-appointments-by-day.component';
+import { ModifyAppointmentComponent } from './modifyappointment/modifyappointment.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -23,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AvailableServicesComponent,
     ListAppointmentsComponent,
     BookAppointmentComponent,
-    ListAppointmentsByDayComponent
+    ListAppointmentsByDayComponent,
+    ModifyAppointmentComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddserviceComponent,
     AvailableServicesComponent,
     BookAppointmentComponent,
-    ListAppointmentsByDayComponent
+    ListAppointmentsByDayComponent,
+    ModifyAppointmentComponent
   ]
 })
 export class ViewsModule { }

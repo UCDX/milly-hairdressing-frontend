@@ -1,0 +1,15 @@
+<div class="modifyappointment-area">
+  <div>
+    <h1 class="text-center">Modificar reservación de cita</h1>
+    <app-date-picker-form
+      [firstFieldValue] = service_id
+      [secondFieldValue] = service.service_name
+      thirdFieldLabel= "Elegir fecha"
+      fourthFieldLabel= "Duración"
+      leftBtnLabel="Volver"
+      rightBtnLabel="Aceptar"
+      (press)="modifyappointmentBoxHandler($event)">
+    </app-date-picker-form>
+  </div>
+</div>
+
