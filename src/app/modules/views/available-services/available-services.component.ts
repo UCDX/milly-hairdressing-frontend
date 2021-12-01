@@ -21,7 +21,7 @@ export class AvailableServicesComponent implements OnInit {
       color: ''
     },
     {
-      displayName: 'Hacer recervación',
+      displayName: 'Hacer reservación',
       codeName: 'appointment',
       color: 'primary'
     }
@@ -51,7 +51,7 @@ export class AvailableServicesComponent implements OnInit {
       return;
     }
 
-    alert(`Se precionó la acción: "${event.actionCodeName}" para el servicio: "${event.service.service_name}".`);
+    alert(`Se presionó la acción: "${event.actionCodeName}" para el servicio: "${event.service.service_name}".`);
   }
 
 }
