@@ -2,6 +2,8 @@
   <div>
     <h1 class="text-center">Reservar cita</h1>
     <app-date-picker-form
+      [firstFieldValue] = service_id
+      [secondFieldValue]=service.service_name
       thirdFieldLabel= "Elegir fecha"
       fourthFieldLabel= "Duración"
       leftBtnLabel="Volver"

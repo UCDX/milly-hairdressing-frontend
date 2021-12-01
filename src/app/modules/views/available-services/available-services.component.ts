@@ -4,6 +4,7 @@ import { ActionButton } from 'src/app/lib/component-clases';
 import { ServiceCardActionEvent } from '../../components/service-card/service-card.component';
 import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
 
 @Component({
   selector: 'app-available-services',
@@ -28,7 +29,8 @@ export class AvailableServicesComponent implements OnInit {
 
   constructor(
     private milly: MillyBackendService,
-    private router: Router
+    private router: Router,
+    private session: SessionService
   ) { }
 
   ngOnInit(): void {
@@ -44,7 +46,8 @@ export class AvailableServicesComponent implements OnInit {
     console.log(event);
 
     if(event.actionCodeName == 'appointment') {
-      this.router.navigateByUrl('/bookappointment');
+      this.session.setService(event.service);
+      this.router.navigateByUrl('/bookappointment/'+ event.service.id);
       return;
     }
 

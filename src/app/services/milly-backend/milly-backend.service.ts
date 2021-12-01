@@ -101,4 +101,23 @@ export class MillyBackendService {
     return this.http.post<MDI.Response<MDI.Service>>(endpoint, body, httpOptions)
       .pipe(catchError(this.handleError<MDI.Response<MDI.Service>>('add service')));
   }
+  
+  createReservation(serv_id: number, reserv_date: string, s_time: string): Observable<MDI.Response<MDI.Reservation>> {
+    console.log(serv_id,reserv_date, s_time)
+    let token = this.session.getUserData()?.session_token || ''
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      })
+    };
+    let body = {
+      service_id: serv_id,
+      reservation_date: reserv_date,
+      start_time: s_time,
+    };
+    let endpoint = `${this.host}/api/users/create-reservation`;
+    return this.http.post<MDI.Response<MDI.Reservation>>(endpoint, body, httpOptions)
+      .pipe(catchError(this.handleError<MDI.Response<MDI.Reservation>>('create reservation')));
+  }
 }

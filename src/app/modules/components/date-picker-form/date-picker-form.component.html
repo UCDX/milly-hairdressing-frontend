@@ -1,12 +1,10 @@
 <mat-card class="card">
   <mat-card-content>
-    <form (submit)="submitHandler($event, 'right', thirdInput.value)">
+    <form  (submit)="submitHandler($event, 'right', thirdInput.value)">
       <mat-list role="list" class="form-field">
         <mat-list-item role="listitem">ID: {{firstFieldValue}}</mat-list-item>
         <mat-list-item role="listitem">Servicio: {{secondFieldValue}}</mat-list-item>
       </mat-list>
-      
-      <!-- Datepicker -->
       
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>{{thirdFieldLabel}}</mat-label>
@@ -15,12 +13,10 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       
-      <!--  -->
-      
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>{{fourthFieldLabel}}</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let hour of hours" [value]="hours.values">
+        <mat-select  [(value)]="hour">
+          <mat-option *ngFor="let hour of hours" [value]="hour.value">
             {{hour.viewValue}}
           </mat-option>
         </mat-select>
