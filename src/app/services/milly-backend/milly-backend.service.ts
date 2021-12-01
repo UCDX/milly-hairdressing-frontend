@@ -82,6 +82,19 @@ export class MillyBackendService {
       .pipe(catchError(this.handleError<MDI.Response<MDI.ServiceList>>('get service list')));
   }
 
+  getReservations(): Observable<MDI.Response<MDI.ReservationList>> {
+    let token = this.session.getUserData()?.session_token || ''
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      })
+    };
+    let endpoint = `${this.host}/api/users/get-user-appointments`;
+    return this.http.get<MDI.Response<MDI.ReservationList>>(endpoint, httpOptions)
+      .pipe(catchError(this.handleError<MDI.Response<MDI.ReservationList>>('get user-reservation list')));
+  }
+
   addService(name: string, cost: number, desc: string, short_desc: string, duration: number): Observable<MDI.Response<MDI.Service>> {
     let token = this.session.getUserData()?.session_token || ''
     let httpOptions = {
