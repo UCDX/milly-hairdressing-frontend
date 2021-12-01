@@ -5,9 +5,11 @@ import { AppRoutingModule } from './modules/routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ViewsModule } from './modules/views/views.module';
 import { MaterialModule } from './modules/material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { MaterialModule } from './modules/material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ViewsModule,
     MaterialModule

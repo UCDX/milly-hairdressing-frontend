@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { FormControl, FormBuilder, Validators } from '@angular/forms';
 
 interface Hour {
   value: string;
@@ -33,16 +34,24 @@ export class DatePickerFormComponent implements OnInit {
 
   @Output() press: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  public hour: string = '';
+  /*
+  public form = this.formBuilder.group({
+    hour: [''],
+  });*/
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
   pressHandler(btn: string,  thirdInput:string) {
+    //console.log(this.form.get('hour')?.value)
+    console.log(this.hour)
     this.press.emit({
       button: btn,
       thirdField: thirdInput,
-
+      fourthField: this.hour
     })
   }
 

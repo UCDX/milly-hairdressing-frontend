@@ -13,6 +13,7 @@ import { BookAppointmentComponent } from './bookappointment/bookappointment.comp
 import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-appointments-by-day.component';
 import { ModifyAppointmentComponent } from './modifyappointment/modifyappointment.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModifyAppointmentComponent } from './modifyappointment/modifyappointmen
   imports: [
     CommonModule,
     MaterialModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [
     LandingComponent,
