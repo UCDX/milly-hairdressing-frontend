@@ -4,6 +4,8 @@ import { ActionButton } from 'src/app/lib/component-clases';
 import { ReservationCardActionEvent } from '../../components/reservation-card/reservation-card.component';
 import { MillyBackendService } from 'src/app/services/milly-backend/milly-backend.service';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
+import { Service } from 'src/app/lib/milly-data-clases';
 
 @Component({
   selector: 'app-list-appointments',
@@ -28,7 +30,8 @@ export class ListAppointmentsComponent implements OnInit {
 
   constructor(
     private milly: MillyBackendService,
-    private router: Router
+    private router: Router,
+    private session: SessionService
   ) { }
 
   ngOnInit(): void {
@@ -61,6 +64,9 @@ export class ListAppointmentsComponent implements OnInit {
     console.log(event);
 
     if(event.actionCodeName == 'modify') {
+      let service = new Service
+      service.service_name = event.reservation.service_name;
+      this.session.setService(service)
       this.router.navigateByUrl('/modifyappointment/'+event.reservation.id_reservation);
       return;
     }
