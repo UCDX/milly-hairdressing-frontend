@@ -11,6 +11,8 @@ import { AvailableServicesComponent } from './available-services/available-servi
 import { ListAppointmentsComponent } from './list-appointments/list-appointments.component';
 import { BookAppointmentComponent } from './bookappointment/bookappointment.component';
 import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-appointments-by-day.component';
+import { ModifyAppointmentComponent } from './modifyappointment/modifyappointment.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-
     AvailableServicesComponent,
     ListAppointmentsComponent,
     BookAppointmentComponent,
-    ListAppointmentsByDayComponent
+    ListAppointmentsByDayComponent,
+    ModifyAppointmentComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,8 @@ import { ListAppointmentsByDayComponent } from './list-appointments-by-day/list-
     AddserviceComponent,
     AvailableServicesComponent,
     BookAppointmentComponent,
-    ListAppointmentsByDayComponent
+    ListAppointmentsByDayComponent,
+    ModifyAppointmentComponent
   ]
 })
 export class ViewsModule { }

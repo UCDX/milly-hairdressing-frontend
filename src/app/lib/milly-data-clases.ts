@@ -66,3 +66,8 @@ export class ServiceList {
   total_record: number = 0;
   services: Service[] = [];
 }
+
+export class BlockedTime {
+  star_time: number = 0;
+  end_time: number = 0;
+}
